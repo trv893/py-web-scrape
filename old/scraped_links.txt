@@ -1,0 +1,4 @@
+/docs/get_started/installation
+/docs/modules/
+/docs/get_started/quickstart
+/docs/get_started/introduction
