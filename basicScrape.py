@@ -4,13 +4,12 @@ from urllib.parse import urljoin
 
 def fetch_url(url):
     try:
-        response = requests.get(url)
-        response.raise_for_status()  # Will raise exception if status is not 200
+        response = requests.get(url, timeout=5)
+        response.raise_for_status()
     except Exception as e:
-        print(f"Error fetching: {url} because of {e}")
-        return None
+        return None, str(e)
 
-    return response.text
+    return response.text, None
 
 
 def parse_links(html, root_url):
